@@ -25,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tiansuyu/opencode-plugin-keychain"
+    "url": "git+https://github.com/TiansuYu/opencode-plugin-keychain.git"
   },
   "devDependencies": {
     "@types/node": "^26.0.0"
