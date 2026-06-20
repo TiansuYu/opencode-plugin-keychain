@@ -15,12 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v7.0.0
 
-      # OIDC trusted publishing needs the npm CLI (>= 11.5.1) and Node >= 22.14.
+      # OIDC trusted publishing needs npm CLI >= 11.5.1, which ships with Node 24.
       # bun publish does not support OIDC, so the publish step uses npm.
+      # NOTE: do NOT set registry-url — it writes an .npmrc with a token
+      # placeholder that forces token auth and breaks OIDC (E404).
       - uses: actions/setup-node@v6.4.0
         with:
-          node-version: "22"
-          registry-url: "https://registry.npmjs.org"
+          node-version: "24"
           package-manager-cache: false
 
       - uses: oven-sh/setup-bun@v2.2.0
@@ -42,8 +43,5 @@ jobs:
             exit 1
           fi
 
-      - name: Update npm to an OIDC-capable version
-        run: npm install -g npm@latest
-
       - name: Publish to npm (OIDC trusted publishing)
-        run: npm publish --access public
+        run: npm publish --access public --provenance
