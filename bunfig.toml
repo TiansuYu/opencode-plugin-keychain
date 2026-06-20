@@ -1,0 +1,5 @@
+[install]
+# Supply-chain cooldown: only install package versions published at least
+# 7 days ago (604800 seconds), so freshly-published (possibly compromised)
+# releases are not pulled immediately. Mirrors the Dependabot cooldown.
+minimumReleaseAge = 604800

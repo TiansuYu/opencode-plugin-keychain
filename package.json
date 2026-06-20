@@ -1,0 +1,32 @@
+{
+  "name": "opencode-plugin-keychain",
+  "version": "0.1.0",
+  "description": "OpenCode plugin to load provider secrets from macOS Keychain",
+  "type": "module",
+  "main": "index.ts",
+  "files": [
+    "index.ts",
+    "README.md"
+  ],
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "keychain",
+    "macos",
+    "secrets"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiansuyu/opencode-plugin-keychain"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.0"
+  }
+}
