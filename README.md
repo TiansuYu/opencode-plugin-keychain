@@ -125,9 +125,11 @@ Publishing is triggered **only** by pushing a `v*` git tag — never by a local 
    git push origin v0.1.1
    ```
 
-The pushed tag triggers the **Publish** workflow, which typechecks, verifies the tag matches `package.json`, and runs `bun publish`.
+The pushed tag triggers the **Publish** workflow, which typechecks, verifies the tag matches `package.json`, and runs `npm publish`.
 
-> **One-time setup:** add an npm automation token as a repository secret named `NPM_TOKEN` (Settings → Secrets and variables → Actions). Create it at npmjs.com → Access Tokens → Generate New Token → *Automation*.
+Publishing uses **npm OIDC trusted publishing** — no tokens or secrets are stored in the repo. (npm's classic automation tokens were deprecated in December 2025.)
+
+> **One-time setup:** on npmjs.com, open the package → **Settings → Trusted Publisher** and add a GitHub Actions publisher: organization/user `TiansuYu`, repository `opencode-plugin-keychain`, workflow filename `publish.yml`. After that, the workflow authenticates automatically via OIDC.
 
 ## License
 
