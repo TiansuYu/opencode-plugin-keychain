@@ -1,6 +1,6 @@
 {
   "name": "opencode-plugin-keychain",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "OpenCode plugin to load provider secrets from macOS Keychain",
   "type": "module",
   "main": "index.ts",
