@@ -13,7 +13,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v7.0.0
+      - uses: actions/checkout@v7.0.1
 
       # OIDC trusted publishing needs npm CLI >= 11.5.1, which ships with Node 24.
       # bun publish does not support OIDC, so the publish step uses npm.
